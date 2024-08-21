@@ -42,7 +42,7 @@ const Home = () => {
       <AboutSection />
 
       {/* ===============================services section======================================== */}
-      <section>
+      <section className='mt-5'>
         <Container>
           <Row>
             <Col lg="12" className="mb-5 text-center">
@@ -102,6 +102,8 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+
+      
     </Helmet>
   )
 }

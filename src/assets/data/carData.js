@@ -1,44 +1,43 @@
 // import all images from assets/images directory
-import img01 from "../all-images/cars-img/nissan-offer.png";
-import img02 from "../all-images/cars-img/offer-toyota.png";
-import img03 from "../all-images/cars-img/bmw-offer.png";
-import img04 from "../all-images/cars-img/nissan-offer.png";
-import img05 from "../all-images/cars-img/offer-toyota.png";
-import img06 from "../all-images/cars-img/mercedes-offer.png";
-import img07 from "../all-images/cars-img/toyota-offer-2.png";
-import img08 from "../all-images/cars-img/mercedes-offer.png";
+import img01 from "../all-images/cars-img/thar-roxx.png";
+import img02 from "../all-images/cars-img/Toyota fortuner.png";
+// import img03 from "../all-images/cars-img/bmw x3.png";
+import img03 from "../all-images/cars-img/bmw-x3.png"
+import img04 from "../all-images/cars-img/Nissan magnite.png";
+import img05 from "../all-images/cars-img/Honda_Civic.png";
+import img06 from "../all-images/cars-img/mercedes_benz_a_class.png";
+import img07 from "../all-images/cars-img/audi-a4-terra-gray-metallic.png";
+import img08 from "../all-images/cars-img/jeep campass.png";
 
 const carData = [
   {
     id: 1,
-    brand: "Tesla",
+    brand: "Mahindra",
     rating: 112,
-    carName: "Tesla Malibu",
+    carName: "Mahindra Thar ROXX",
     imgUrl: img01,
-    model: "Model 3",
+    model: "Diesel",
     price: 50,
-    speed: "20kmpl",
+    speed: "12kmpl",
     gps: "GPS Navigation",
-    seatType: "Heated seats",
+    seatType: "ventilated seats",
     automatic: "Automatic",
-    description:
-      " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
+    description: "The Mahindra thar ROXX is a lifestyle off road SUV.Thar is a 5-door, serious off-roader that drives reasonably well on the road. It stands out with its rugged stance, modern design, and durable construction. The powertrains are powerful, with the petrol option being superbly refined and entertaining for a Mahindra. ",
   },
 
   {
     id: 2,
     brand: "Toyota",
     rating: 102,
-    carName: "Toyota Aventador",
+    carName: "Toyota Fortuner",
     imgUrl: img02,
-    model: "Model-2022",
+    model: "petrol",
     price: 50,
-    speed: "20kmpl",
+    speed: "10kmpl",
     gps: "GPS Navigation",
-    seatType: "Heated seats",
+    seatType: "ventilated seats",
     automatic: "Automatic",
-    description:
-      " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
+    description: "Fortuner boasts of a power-packed 6-speed Diese. its also offered 4x4 ",
   },
 
   {
@@ -47,94 +46,88 @@ const carData = [
     rating: 132,
     carName: "BMW X3",
     imgUrl: img03,
-    model: "Model-2022",
+    model: "Diesel",
     price: 65,
-    speed: "20kmpl",
+    speed: "16.55kmpl",
     gps: "GPS Navigation",
-    seatType: "Heated seats",
+    seatType: "adjustable sport seats",
     automatic: "Automatic",
-    description:
-      " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
+    description: "The exquisite feel of luxury finally meets the BMW X3 is ready to serve an experience that’s nothing like you’ve felt before",
   },
 
   {
     id: 4,
     brand: "Nissan",
     rating: 102,
-    carName: "Nissan Mercielago",
+    carName: "Nissan Magnite",
     imgUrl: img04,
-    model: "Model-2022",
+    model: "petrol",
     price: 70,
-    speed: "20kmpl",
+    speed: "18.75kmpl",
     gps: "GPS Navigation",
-    seatType: "Heated seats",
+    seatType: "leather seats",
     automatic: "Automatic",
-    description:
-      " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
+    description: "The Nissan Magnite is a budget-friendly SUV offering both automatic and manual transmissions, with a fuel-efficient engine and a spacious interior for five",
   },
 
   {
     id: 5,
-    brand: "Ferrari",
+    brand: "Honda",
     rating: 94,
-    carName: "Ferrari Camry",
+    carName: "Honda Civic",
     imgUrl: img05,
-    model: "Model-2022",
+    model: "petrol",
     price: 45,
-    speed: "20kmpl",
+    speed: "17kmpl",
     gps: "GPS Navigation",
-    seatType: "Heated seats",
+    seatType: " ventilated seats",
     automatic: "Automatic",
-    description:
-      " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
+    description: "The 2023 Civic has two powertrain options: a standard 2.0-liter four-cylinder engine with 158 horsepower, and an available 1.5-liter four-cylinder engine with 180 horsepower. ",
   },
 
   {
     id: 6,
     brand: "Mercedes",
     rating: 119,
-    carName: "Mercedes Benz XC90",
+    carName: "Mercedes Benz A-class",
     imgUrl: img06,
-    model: "Model-2022",
+    model: "petrol",
     price: 85,
-    speed: "20kmpl",
+    speed: "17kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",
     automatic: "Automatic",
-    description:
-      " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
+    description: "The Mercedes-Benz A-Class is a car that combines luxury and sportiness. It has a compact saloon design with short overhangs and a sporty appearance.",
   },
 
   {
     id: 7,
     brand: "Audi",
     rating: 82,
-    carName: "Audi Fiesta",
+    carName: "Audi A4",
     imgUrl: img07,
-    model: "Model 3",
+    model: "petrol",
     price: 50,
-    speed: "20kmpl",
+    speed: "17kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",
     automatic: "Automatic",
-    description:
-      " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
+    description: " The Audi A4 receives features such as a virtual cockpit with navigation, three-zone climate control, 10.1-inch infotainment system with MMI touch, and an Audi phonebox with wireless smartphone connectivity and charging.",
   },
 
   {
     id: 8,
-    brand: "Colorado",
+    brand: "Jeep",
     rating: 52,
-    carName: "Rolls Royce Colorado",
+    carName: "Jeep Compass",
     imgUrl: img08,
-    model: "Model 3",
+    model: "diesel",
     price: 50,
-    speed: "20kmpl",
+    speed: "13.5kmpl",
     gps: "GPS Navigation",
-    seatType: "Heated seats",
+    seatType: "ventilated seats",
     automatic: "Automatic",
-    description:
-      " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
+    description: " If you enjoy the thrill of accelerating the Compass 4x2 Automatic is engineered just for you.It offers comfortable, contemporary styling with premium interiors.In addition to these, a dual-pane panoramic sunroof and nine-speaker Uconnect audio system offer an experience that makes every ride a luxurious adventure. ",
   },
 ];
 
