@@ -6,7 +6,14 @@
     background-size: cover;
     padding: 65px 35px;
 }
+.find__car-btn a {
+  text-decoration: none;
+  color: white;
+}
 
+.find__car-btn a:hover {
+  color: rgb(249, 168, 38, 0.9);
+}
 .find__cars-left h2 {
     font-weight: 600;
     font-size: 2.8rem;

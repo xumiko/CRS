@@ -9,7 +9,7 @@ import Blog from '../pages/Blog'
 import BlogDetails from '../pages/BlogDetails'
 import NotFound from '../pages/NotFound'
 import Contact from '../pages/Contact'
-
+import DriverRegistrationPage from '../pages/DriverRegistrationPage'
 const Routers = () => {
   return <Routes>
     < Route path='/' element={<Navigate to='/home'/>}  />
@@ -20,6 +20,7 @@ const Routers = () => {
     <Route path='/blogs' element={<Blog />} />
     <Route path='/blogs/:slug' element={<BlogDetails />} />
     <Route path='/contact' element={<Contact />} />
+    <Route path='/registration' element={<DriverRegistrationPage />} />
     <Route path='*' element={<NotFound />} />
   </Routes>
 }
