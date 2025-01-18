@@ -48,6 +48,8 @@
 .become__driver-btn a:active {
   color: white;
 }
+
+
 @media only screen and (max-width: 576px) {
   .become__driver-img {
     display: none;
