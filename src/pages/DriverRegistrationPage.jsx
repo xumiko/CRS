@@ -159,8 +159,10 @@
 
 import React, { useState } from 'react';
 import "../styles/driver-registration.css";
+import axios from 'axios';
 
 const DriverRegistrationPage = () => {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -168,8 +170,7 @@ const DriverRegistrationPage = () => {
     age: '',
     address: '',
     licenseNumber: '',
-    identificationProof: '',
-    idProofType: 'adhar', // Default value for identification proof type
+    idProofType: 'Aadhaar', // Default value for identification proof type
     drivingLicense: null, // To handle file upload for driving license
     idProofFile: null, // To handle file upload for identification proof
   });
@@ -202,8 +203,9 @@ const DriverRegistrationPage = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     const formErrors = validateForm();
     if (Object.keys(formErrors).length === 0) {
       // Form is valid, handle the form submission
@@ -211,6 +213,61 @@ const DriverRegistrationPage = () => {
     } else {
       setErrors(formErrors);
     }
+
+
+    // Create a FormData object to handle file uploads
+    const formDataToSend = new FormData();
+    Object.keys(formData).forEach((key) => {
+      if (formData[key] !== null && formData[key] !== undefined) {
+        formDataToSend.append(key, formData[key]);
+      }
+    });
+  
+
+
+    // try {
+    //   const response = await fetch("http://localhost:5000/api/register-driver",  {
+    //    method:"POST",
+    //    body: formData,
+    //   });      //1
+
+
+
+    try {
+      const response = await axios.post("http://localhost:5000/api/register-driver", formData, {
+        headers:{
+          "Content-Type":"multipart/form-data",
+        }
+      });
+
+
+      if (response.ok) {
+          alert("Driver registered successfully!");
+          setFormData({ name: "", email: "", phone: "", age: "", address: "", licenseNumber: "", idProofType: "",  drivingLicense: "", idProofFile: ""});
+      } else {
+          const errorData = await response.json();
+          alert(errorData.error || "Failed to register driver");
+      }
+  } catch (error) {
+      console.error("Error submitting form:", error);
+  }
+
+  //reset
+
+  setFormData({
+    name: '',
+    email: '',
+    phone: '',
+    age: '',
+    address: '',
+    licenseNumber: '',
+    identificationProof: '',
+    idProofType: 'Aadhaar',
+    drivingLicense: null,
+    idProofFile: null,
+  });
+
+  
   };
 
   // Array of fields to render
@@ -227,6 +284,7 @@ const DriverRegistrationPage = () => {
     <div className="min-h-screen bg-gradient-to-r from-blue-900 to-yellow-400 flex items-center justify-center py-8">
       <div className="bg-white p-8 m-6  rounded-lg shadow-lg w-full max-w-md">
                <h2 className="form-heading">Driver Registration</h2>
+
 <form onSubmit={handleSubmit} className="form-container">
   {/* Render standard input fields */}
   {fields.map(({ label, name, type }) => (
@@ -239,10 +297,12 @@ const DriverRegistrationPage = () => {
         value={formData[name]}
         onChange={handleInputChange}
         className="input-field"
+        required
       />
       {errors[name] && <p className="error-text">{errors[name]}</p>}
     </div>
   ))}
+
 
   {/* Identification Proof Type (Aadhar or Passport) */}
   <div className="form-group">
@@ -254,8 +314,8 @@ const DriverRegistrationPage = () => {
       onChange={handleInputChange}
       className="input-field"
     >
-      <option value="adhar">Aadhar Card</option>
-      <option value="passport">Passport</option>
+      <option value="Aadhaar">Aadhaar Card</option>
+      <option value="Passport">Passport</option>
     </select>
     {errors.idProofType && <p className="error-text">{errors.idProofType}</p>}
   </div>
@@ -289,6 +349,26 @@ const DriverRegistrationPage = () => {
   <button type="submit" className="submit-button">
     Register as Driver
   </button>
+
+  <button
+    type="button"
+    className="reset-button"
+    onClick={() =>
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        age: '',
+        address: '',
+        licenseNumber: '',
+        identificationProof: '',
+        idProofType: 'Aadhaar',
+        drivingLicense: null,
+        idProofFile: null,
+      })
+    }
+  >Reset Form</button>
+
 </form>
 
       </div>

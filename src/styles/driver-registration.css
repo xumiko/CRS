@@ -59,7 +59,7 @@
   
   /* Button Styling */
   .submit-button {
-    padding: 16px;
+    padding: 12px;
     font-size: 1rem;
     color: #fff;
     background-color: #f9a826;
@@ -75,6 +75,28 @@
   }
   
   .submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  }
+
+  .reset-button{
+    padding: 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #f9a826;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+  }
+
+  .reset-button:hover {
+    background-color: #020a4de9;
+  }
+  
+  .reset-button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
   }
