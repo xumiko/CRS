@@ -44,7 +44,7 @@ const Contact = () => {
             try {
                 // const response = await axios.post('http://localhost:5000/api/contact', { name, email, message });
 
-                await axios.post('http://localhost:5000/api/contact', { name, email, message });
+                await axios.post('https://crs-exeh.onrender.com/api/contact', { name, email, message });
                 setStatus('Message sent successfully!');
             } catch (error) {
                 setStatus('Error sending message');
