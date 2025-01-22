@@ -10,6 +10,8 @@ const contactModel = require("./models/contactModel");
 
 const registration=require('./models/registration');
 
+const bookingDetails = require('./models/bookingDetails');
+
 
 const app = express();
 const stripe = Stripe("YOUR_STRIPE_SECRET_KEY");
@@ -87,6 +89,48 @@ app.post("/api/register-driver", upload.fields([{ name: "drivingLicense" }, { na
       res.status(500).json({ error: "Failed to register driver" });
     }
 });
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+
+app.post('/api/bookings', async (req, res) => {
+  const {
+    firstName,
+    lastName,
+    email,
+    phone,
+    fromAddress,
+    toAddress,
+    passengers,
+    luggage,
+    journeyDate,
+    journeyTime,
+    message,
+  } = req.body;
+
+  try {
+    // Create a new booking
+    const newBooking = new bookingDetails({
+      firstName,
+      lastName,
+      email,
+      phone,
+      fromAddress,
+      toAddress,
+      passengers,
+      luggage,
+      journeyDate,
+      journeyTime,
+      message,
+    });
+
+    await newBooking.save();
+    res.status(201).json({ message: 'Booking saved successfully!' });
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to save booking', error });
+  }
+});
+
 
 
 //--------------------------------------------------------------------------------------------------------------------------
